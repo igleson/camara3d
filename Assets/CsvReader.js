@@ -134,7 +134,8 @@ function OnGUI () {
 
 			if(search.Length <= lineData[4].Length && lineData[4].ToLower().Substring(0, search.length).Equals(search)){//if(startWith)
 				var camera = GameObject.Find("main_camera");
-				var obj = GameObject.Find(lineData[4]);
+
+				var obj = GameObject.Find(lineData[4] + " - " + lineData[5]);
 				var pos = obj.transform.position;
 				camera.transform.position = Vector3(pos.x-0.7, pos.y-0.7, pos.z-0.7);
 
