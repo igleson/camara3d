@@ -81,17 +81,17 @@ function Update () {
 	var camera = GameObject.Find("main_camera");
 
 	var atual = camera.transform.position;
-	if (Input.GetKey (KeyCode.UpArrow)){
+	if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey (KeyCode.W)){
 		camera.transform.position = Vector3(atual.x + move.x, atual.y + move.y, atual.z + move.z);
 	}
-	if (Input.GetKey (KeyCode.DownArrow)){
+	if (Input.GetKey (KeyCode.DownArrow) || Input.GetKey (KeyCode.S)){
 		camera.transform.position = Vector3(atual.x - move.x, atual.y - move.y, atual.z - move.z);
 	}
-	if (Input.GetKey(KeyCode.LeftArrow)) {
+	if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey (KeyCode.A)) {
 		var m = Quaternion.Euler(0, -90, 0) * move;
 		camera.transform.position = Vector3(atual.x + m.x, atual.y + m.y, atual.z + m.z);
 	}
-	if (Input.GetKey(KeyCode.RightArrow)) {
+	if (Input.GetKey(KeyCode.RightArrow)  || Input.GetKey (KeyCode.D)) {
 		var m2 = Quaternion.Euler(0, 90, 0) * move;
 		camera.transform.position = Vector3(atual.x + m2.x, atual.y + m2.y, atual.z + m2.z);
 	}
